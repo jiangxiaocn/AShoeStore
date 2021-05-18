@@ -2,6 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <!--
+    <data>
+        <variable
+            name="shoeListViewModel"
+            type="com.udacity.shoestore.models.shoeListViewModel" />
+    </data>-->
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <!--Using Constraint layout because i prefer the capability of visual editing -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,33 +37,36 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/enter_a_shoe_name"
+            android:text="@={shoe.name}"
             android:inputType="textPersonName|textImeMultiLine"
             app:layout_constraintBaseline_toBaselineOf="@id/detailName"
             app:layout_constraintStart_toEndOf="@id/detailName" />
 
         <TextView
-            android:id="@+id/company"
+            android:id="@+id/detailSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/company"
+            android:text="@string/shoeSize"
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size"
             app:layout_constraintStart_toStartOf="@id/detailName"
             app:layout_constraintTop_toBottomOf="@id/detailName" />
 
+
         <EditText
-            android:id="@+id/companyEdit"
+            android:id="@+id/sizeEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/enter_a_company"
+            android:hint="@string/enter_the_size"
             android:inputType="textPersonName"
-            app:layout_constraintBaseline_toBaselineOf="@id/company"
-            app:layout_constraintStart_toEndOf="@+id/company"
+            android:text="@={Double.toString(shoe.size)}"
+            app:layout_constraintBaseline_toBaselineOf="@id/detailSize"
+            app:layout_constraintStart_toEndOf="@+id/detailSize"
             app:layout_constraintTop_toBottomOf="@id/nameEdit" />
 
         <TextView
@@ -61,8 +77,8 @@
             android:text="@string/description"
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size"
-            app:layout_constraintStart_toStartOf="@id/company"
-            app:layout_constraintTop_toBottomOf="@id/company" />
+            app:layout_constraintStart_toStartOf="@id/detailSize"
+            app:layout_constraintTop_toBottomOf="@id/detailSize" />
 
         <EditText
             android:id="@+id/descEdit"
@@ -73,9 +89,10 @@
             android:ems="10"
             android:hint="@string/add_some_description"
             android:inputType="textPersonName"
+            android:text="@={shoe.description}"
             app:layout_constraintBaseline_toBaselineOf="@id/desc"
             app:layout_constraintStart_toEndOf="@id/desc"
-            app:layout_constraintTop_toBottomOf="@id/companyEdit" />
+            app:layout_constraintTop_toBottomOf="@id/sizeEdit" />
 
 
         <Button

@@ -13,21 +13,31 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.InstructionFragmentBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 import com.udacity.shoestore.models.shoeListViewModel
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import com.udacity.shoestore.models.Shoe
 
 class shoeListFragment :Fragment() {
-    /*
-    private lateinit var viewModel: shoeListViewModel
-    private lateinit var binding : ShoeListFragmentBinding*/
+
+
+    private val viewModel : shoeListViewModel by activityViewModels()
+    
+    private lateinit var binding : ShoeListFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val binding : ShoeListFragmentBinding = DataBindingUtil.inflate(inflater,
+            binding  = DataBindingUtil.inflate(inflater,
             R.layout.shoe_list_fragment,
             container,false)
-       /* viewModel=ViewModelProvider(this).get(shoeListViewModel::class.java)*/
+
+            viewModel.shoeList.observe(viewLifecycleOwner, Observer {list ->
+               addShoe(list)
+       })
+
         binding.floatingActionButton.setOnClickListener{
             NavHostFragment.findNavController(this).navigate(shoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
         setHasOptionsMenu(true)
+        binding.lifecycleOwner=this
         return binding.root
     }
 
@@ -40,5 +50,12 @@ class shoeListFragment :Fragment() {
         return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
                 ||super.onOptionsItemSelected(item)
 
+    }
+    private fun addShoe(shoes:List<Shoe>){
+        shoes.forEach{shoe ->
+            val shoeDetailLayout = shoeDetailLayout(context)
+            shoeDetailLayout.updateShoe(shoe)
+            binding.shoeList.addView(shoeDetailLayout)
+        }
     }
 }

@@ -2,88 +2,77 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:id="@+id/listLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="vertical">
+    <!--Using LinearLayout because it is used for easy layout -->
 
-        <LinearLayout
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+       <LinearLayout
+           android:id="@+id/listLayout"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="16dp"
+           android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/shoeName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/shoeName" />
+           <LinearLayout
+               android:id="@+id/name"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/shoe_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/shoe_name" />
-        </LinearLayout>
+               <TextView
+                   android:id="@+id/shoeN"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/shoeName" />
 
-        <LinearLayout
-            android:id="@+id/size"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+               <TextView
+                   android:id="@+id/shoe_name"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/shoe_name" />
+           </LinearLayout>
 
-            <TextView
-                android:id="@+id/shoeSize"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/shoeSize" />
+           <LinearLayout
+               android:id="@+id/size"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/shoe_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/shoe_size" />
-        </LinearLayout>
+               <TextView
+                   android:id="@+id/shoeS"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/shoeSize" />
 
-        <LinearLayout
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+               <TextView
+                   android:id="@+id/shoe_size"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/shoe_size" />
+           </LinearLayout>
 
-            <TextView
-                android:id="@+id/shoeDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/shoeDescription" />
+           <LinearLayout
+               android:id="@+id/description"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/shoe_decription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/shoe_description" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+               <TextView
+                   android:id="@+id/shoeDescription"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/shoeDescription" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/shoeImage"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
-        </LinearLayout>
-    </LinearLayout>
+               <TextView
+                   android:id="@+id/shoe_decription"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/shoe_description" />
+           </LinearLayout>
+       </LinearLayout>
 
-</layout>
+   </layout>

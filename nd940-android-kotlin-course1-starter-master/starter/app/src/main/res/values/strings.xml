@@ -27,4 +27,5 @@
     <string name="description">Description:</string>
     <string name="add_some_description">Add some description</string>
     <string name="enter_a_company">Enter a company</string>
+    <string name="enter_the_size">Enter a size</string>
 </resources>

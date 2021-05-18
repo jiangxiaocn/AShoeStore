@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--Using Constraint layout because i prefer the capability of visual editing -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/detailName"
+            android:id="@+id/email"
             style="@style/textStyle"
             android:layout_marginTop="130dp"
             android:text="@string/email_text"
@@ -28,14 +30,14 @@
             android:ems="10"
             android:hint="@string/please_enter_your_e_mail"
             android:inputType="textEmailAddress"
-            app:layout_constraintBaseline_toBaselineOf="@id/detailName"
+            app:layout_constraintBaseline_toBaselineOf="@id/email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/detailName"
-            app:layout_constraintTop_toBottomOf="@id/detailName"
+            app:layout_constraintStart_toEndOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@id/email"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/company"
+            android:id="@+id/passwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -43,8 +45,8 @@
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size"
             app:layout_constraintBottom_toBottomOf="@id/shoeEnter"
-            app:layout_constraintBottom_toTopOf="@id/detailName"
-            app:layout_constraintStart_toStartOf="@id/detailName"
+            app:layout_constraintBottom_toTopOf="@id/email"
+            app:layout_constraintStart_toStartOf="@id/email"
             app:layout_constraintTop_toBottomOf="@id/shoeEnter"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -57,8 +59,8 @@
             android:hint="@string/enter_your_passowrd"
             android:importantForAutofill="no"
             android:inputType="textPassword"
-            app:layout_constraintBaseline_toBaselineOf="@id/company"
-            app:layout_constraintBottom_toTopOf="@id/company"
+            app:layout_constraintBaseline_toBaselineOf="@id/passwd"
+            app:layout_constraintBottom_toTopOf="@id/passwd"
             app:layout_constraintEnd_toEndOf="@id/shoeEnter"
             app:layout_constraintStart_toStartOf="@id/shoeEnter"
             app:layout_constraintTop_toBottomOf="@id/shoeEnter" />
@@ -69,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/log_in"
-            app:layout_constraintStart_toEndOf="@id/company"
+            app:layout_constraintStart_toEndOf="@id/passwd"
             app:layout_constraintTop_toBottomOf="@id/companyEnter" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
