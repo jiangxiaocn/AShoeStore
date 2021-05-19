@@ -14,6 +14,7 @@ import com.udacity.shoestore.databinding.ShoeDetailsFragmentBinding
 import com.udacity.shoestore.models.shoeListViewModel
 import kotlinx.android.synthetic.main.shoe_list_fragment.*
 import androidx.fragment.app.activityViewModels
+import com.udacity.shoestore.models.Shoe
 
 class shoeDetailFragment :Fragment(){
     private val viewModel : shoeListViewModel by activityViewModels()
@@ -21,10 +22,11 @@ class shoeDetailFragment :Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding : ShoeDetailsFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.shoe_details_fragment,container,false)
 
-        binding.cancel.setOnClickListener{
+            binding.cancel.setOnClickListener{
             NavHostFragment.findNavController(this).navigate(shoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
         binding.save.setOnClickListener{
+            /*addshoe item, how to do this?*/
             NavHostFragment.findNavController(this).navigate(shoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
         return binding.root

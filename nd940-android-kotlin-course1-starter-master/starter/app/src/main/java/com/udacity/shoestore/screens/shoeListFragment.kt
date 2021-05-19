@@ -28,6 +28,7 @@ class shoeListFragment :Fragment() {
             binding  = DataBindingUtil.inflate(inflater,
             R.layout.shoe_list_fragment,
             container,false)
+            binding.lifecycleOwner = this
 
             viewModel.shoeList.observe(viewLifecycleOwner, Observer {list ->
                addShoe(list)

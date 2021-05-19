@@ -2,12 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <!--
-    <data>
-        <variable
-            name="shoeListViewModel"
-            type="com.udacity.shoestore.models.shoeListViewModel" />
-    </data>-->
+
     <data>
         <variable
             name="shoe"
@@ -64,7 +59,7 @@
             android:ems="10"
             android:hint="@string/enter_the_size"
             android:inputType="textPersonName"
-            android:text="@={Double.toString(shoe.size)}"
+            android:text="@{Double.toString(shoe.size)}"
             app:layout_constraintBaseline_toBaselineOf="@id/detailSize"
             app:layout_constraintStart_toEndOf="@+id/detailSize"
             app:layout_constraintTop_toBottomOf="@id/nameEdit" />

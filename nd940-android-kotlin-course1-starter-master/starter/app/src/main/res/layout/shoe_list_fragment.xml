@@ -2,11 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <!--<data>
-       <variable
-           name="shoeListViewModel"
-           type="com.udacity.shoestore.models.shoeListViewModel" />
-   </data>-->
 
     <!--Using LinearLayout layout because what i know is the constraint layout can't contain a scrollview -->
 
