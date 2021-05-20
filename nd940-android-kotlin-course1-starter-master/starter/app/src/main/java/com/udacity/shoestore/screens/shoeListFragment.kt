@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.InstructionFragmentBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
-import com.udacity.shoestore.models.shoeListViewModel
+import com.udacity.shoestore.models.ShoeListViewModel
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.udacity.shoestore.models.Shoe
@@ -20,7 +18,7 @@ import com.udacity.shoestore.models.Shoe
 class shoeListFragment :Fragment() {
 
 
-    private val viewModel : shoeListViewModel by activityViewModels()
+    private val viewModel : ShoeListViewModel by activityViewModels()
     
     private lateinit var binding : ShoeListFragmentBinding
 
