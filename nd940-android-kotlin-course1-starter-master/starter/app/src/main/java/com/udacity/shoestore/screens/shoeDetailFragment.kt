@@ -11,6 +11,8 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailsFragmentBinding
 import com.udacity.shoestore.models.ShoeListViewModel
 import androidx.fragment.app.activityViewModels
+import com.udacity.shoestore.models.Shoe
+import kotlinx.android.synthetic.main.shoe_details_fragment.*
 
 class shoeDetailFragment :Fragment(){
     private val viewModel : ShoeListViewModel by activityViewModels()
@@ -24,7 +26,7 @@ class shoeDetailFragment :Fragment(){
             NavHostFragment.findNavController(this).navigate(shoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
         binding.save.setOnClickListener{
-            viewModel.addShoeToList(viewModel.newShoe)
+            viewModel.addShoeToList(viewModel.newShoe.value!!)
             NavHostFragment.findNavController(this).navigate(shoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
         return binding.root
