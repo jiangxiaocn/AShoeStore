@@ -18,10 +18,12 @@ class ShoeListViewModel : ViewModel() {
 
     init {
         _shoeList.value = mutableListOf()
+        _newShoe = MutableLiveData(Shoe("", 0.0, "", "", null))
     }
 
     fun addShoeToList(newShoe: Shoe){
            _shoeList.value!!.add(newShoe)
+          _newShoe = MutableLiveData(Shoe("", 0.0, "", "", null))
         }
 
 }
