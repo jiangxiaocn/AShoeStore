@@ -62,7 +62,7 @@
             android:ems="10"
             android:hint="@string/enter_the_size"
             android:inputType="textPersonName"
-            android:text="@{Double.toString(shoeListViewModel.newShoe.size)}"
+            android:text="@={`` +shoeListViewModel.newShoe.size}"
             app:layout_constraintBaseline_toBaselineOf="@id/detailSize"
             app:layout_constraintStart_toEndOf="@+id/detailSize"
             app:layout_constraintTop_toBottomOf="@id/nameEdit" />
